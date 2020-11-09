@@ -23,7 +23,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: 0;
+  box-sizing: border-box;
 }
 
 /*Styling based on tags*/
@@ -40,7 +40,7 @@ a {
 }
 
 img {
-  widows: 100%;
+  width: 100%;
   display: block;
 }
 
@@ -78,7 +78,7 @@ p {
     font-size: 2.5rem;
   }
   h3 {
-    font-size: 1rem;
+    font-size: 2rem;
   }
   h4 {
     font-size: 1rem;
@@ -98,6 +98,7 @@ p {
   text-transform: uppercase;
   background: var(--clr-primary);
   color: var(--clr-white-main);
+  padding: 0.75rem 1rem;
   letter-spacing: var(--spacing);
   display: inline-block;
   font-weight: 700;
@@ -105,7 +106,7 @@ p {
   font-size: 1rem;
   border: none;
   cursor: pointer;
-  box-shadow: 0 1px 3px rbga(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 .btn:hover {
   color: var(--clr-primary);
@@ -117,6 +118,29 @@ p {
   content: "";
   clear: both;
   display: table;
+}
+
+.section-title h3 {
+  font-family: var(--ff-secondary);
+  color: var(--clr-primary);
+}
+
+.section-title {
+  margin-bottom: 2rem;
+}
+
+.section-center {
+  padding: 4rem 0;
+  width: 85vw;
+  margin: 0 auto;
+  max-width: 1170px;
+}
+
+@media screen and (min-width: 992px) {
+  .section-center {
+    width: 95vw;
+    padding: 4rem 1rem;
+  }
 }
 
 /* Header */
@@ -151,7 +175,7 @@ p {
   outline: 0.125rem solid var(--clr-primary);
   outline-offset: 0.25rem;
   font-size: 1.25rem;
-  padding: 1rem 1.7rem;
+  padding: 1rem 1.75rem;
 }
 .content-divider {
   height: 0.5rem;
@@ -201,5 +225,43 @@ p {
   .skill {
     float: left;
     width: 25%;
+  }
+}
+
+/* About */
+
+.about-img,
+.about-info {
+  padding: 2rem 0;
+}
+.about-picture-container {
+  background: var(--clr-primary);
+  border: 0.5rem solid var(--clr-primary);
+  max-width: 30rem;
+  overflow: hidden;
+}
+
+.about-picture {
+  transition: var(--transition);
+}
+
+.about-picture-container:hover .about-picture {
+  opacity: 0.5;
+  transform: scale(1.2);
+}
+
+.about-text {
+  max-width: 26rem;
+  color: var(--clr-grey-5);
+}
+
+@media screen and (min-width: 992px) {
+  .about-img,
+  .about-info {
+    float: left;
+    width: 50%;
+  }
+  .about-info {
+    padding-left: 2rem;
   }
 }
